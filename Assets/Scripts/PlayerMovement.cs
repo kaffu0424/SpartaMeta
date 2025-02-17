@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
         float verti = Input.GetAxisRaw("Vertical");
 
         rigidBody.velocity = new Vector2(hori, verti) * moveSpeed;
+
+        animator.SetFloat("moveX", hori);
+        animator.SetFloat("moveY", verti);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
