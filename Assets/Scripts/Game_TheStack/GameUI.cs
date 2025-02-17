@@ -18,7 +18,7 @@ public class GameUI : BaseUI
         return UIState.Game;
     }
 
-    public override void Init(UIManager uiManager)
+    public override void Init(TheStackUI uiManager)
     {
         base.Init(uiManager);
 

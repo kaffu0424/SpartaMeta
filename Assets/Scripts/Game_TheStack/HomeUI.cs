@@ -15,7 +15,7 @@ public class HomeUI : BaseUI
         return UIState.Home;
     }
 
-    public override void Init(UIManager uiManager)
+    public override void Init(TheStackUI uiManager)
     {
         base.Init(uiManager);
 

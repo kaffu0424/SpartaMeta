@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class BaseUI : MonoBehaviour
 {
-    protected UIManager uiManager;
+    protected TheStackUI uiManager;
 
-    public virtual void Init(UIManager uiManager)
+    public virtual void Init(TheStackUI uiManager)
     {
         this.uiManager = uiManager;
     }

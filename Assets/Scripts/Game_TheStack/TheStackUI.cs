@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.XR;
 
 public enum UIState
 {
@@ -10,14 +8,8 @@ public enum UIState
     Game,
     Score
 }
-public class UIManager : MonoBehaviour
+public class TheStackUI : MonoBehaviour
 {
-    static UIManager instance;
-    public static UIManager Instance
-    {
-        get { return instance; }
-    }
-
     UIState currentState = UIState.Home;
     HomeUI homeUI = null;
     GameUI gameUI = null;
@@ -27,7 +19,6 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        instance = this;
 
         theStack = FindObjectOfType<TheStack>();
         homeUI = GetComponentInChildren<HomeUI>(true);
@@ -57,11 +48,11 @@ public class UIManager : MonoBehaviour
 
     public void OnClickExit()
     {
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-#else
+    #else
         Application.Quit();
-#endif
+    #endif
     }
 
     public void UpdateScore()

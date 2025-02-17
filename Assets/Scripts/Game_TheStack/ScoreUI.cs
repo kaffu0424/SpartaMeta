@@ -25,7 +25,7 @@ public class ScoreUI : BaseUI
         return UIState.Score;
     }
 
-    public override void Init(UIManager uiManager)
+    public override void Init(TheStackUI uiManager)
     {
         base.Init(uiManager);
 

@@ -42,8 +42,12 @@ public class TheStack : MonoBehaviour
 
     private bool isGameOver = true;
 
+    // TheStack UI Manager
+    private TheStackUI theStackUI;
     private void Start()
     {
+        theStackUI = FindObjectOfType<TheStackUI>();
+
         if (originBlock == null)
         {
             Debug.Log("Originblock is null");
@@ -79,7 +83,7 @@ public class TheStack : MonoBehaviour
                 UpdateScore();
                 isGameOver = true;
                 GameOverEffect();
-                UIManager.Instance.SetScoreUI();
+                theStackUI.SetScoreUI();
             }
         }
 
@@ -114,7 +118,7 @@ public class TheStack : MonoBehaviour
 
         isMovingX = !isMovingX;
 
-        UIManager.Instance.UpdateScore();
+        theStackUI.UpdateScore();
 
         return true;
     }
