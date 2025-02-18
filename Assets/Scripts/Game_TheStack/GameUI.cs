@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameUI : BaseUI
+public class GameUI : TheStackBaseUI
 {
     [SerializeField]
     private TextMeshProUGUI scoreText;

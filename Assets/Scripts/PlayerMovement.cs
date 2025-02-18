@@ -28,9 +28,4 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("moveX", hori);
         animator.SetFloat("moveY", verti);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log(collision.name);
-    }
 }
