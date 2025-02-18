@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum UIState
 {
@@ -17,7 +18,7 @@ public class TheStackUI : MonoBehaviour
 
     TheStack theStack = null;
 
-    void Start()
+    void Awake()
     {
 
         theStack = FindObjectOfType<TheStack>();
@@ -48,8 +49,8 @@ public class TheStackUI : MonoBehaviour
 
     public void OnClickExit()
     {
-    #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+#if UNITY_EDITOR
+        SceneManager.LoadScene("01_Main");
     #else
         Application.Quit();
     #endif

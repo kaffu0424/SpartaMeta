@@ -276,7 +276,6 @@ public class TheStack : MonoBehaviour
 
         if(comboCount % 5 == 0)
         {
-            Debug.Log("5 combo success");
             stackBounds += new Vector3(0.5f, 0.5f);
 
             stackBounds.x = (stackBounds.x > boundSize) ? boundSize : stackBounds.x;
@@ -289,8 +288,6 @@ public class TheStack : MonoBehaviour
     {
         if(bestScore < stackCount)
         {
-            Debug.Log("최고 점수 갱신");
-
             bestScore = stackCount;
             bestCombo = maxCombo;
 

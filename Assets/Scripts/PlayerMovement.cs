@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     [Range(0f, 5)]
     private float moveSpeed;
 
-
     private Rigidbody2D rigidBody;
     private Animator    animator;
 
