@@ -18,9 +18,8 @@ public class PopupUI : MonoBehaviour
             PopupExit();
     }
 
-    public void OnPopup(string Text, Action enter = null, Action exit = null)
+    public void SetPopup(string Text, Action enter = null, Action exit = null)
     {
-        gameObject.SetActive(true);
         popupTEXT.text = Text;
 
         enterFunction = enter;
@@ -29,13 +28,13 @@ public class PopupUI : MonoBehaviour
 
     public void PopupEnter()
     {
-        gameObject.SetActive(false);
+        UIManager.Instance.OffPopup();
         enterFunction?.Invoke();
     }
 
     public void PopupExit()
     {
-        gameObject.SetActive(false);
+        UIManager.Instance.OffPopup();
         exitFunction?.Invoke();
     }
 }

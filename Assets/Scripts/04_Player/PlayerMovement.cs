@@ -19,6 +19,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // UI로 인한 움직임 방지
+        if (UIManager.Instance.IsMovementBlocked)
+        {
+            rigidBody.velocity = Vector3.zero;
+            return;
+        }
+
         float hori = Input.GetAxisRaw("Horizontal");
         float verti = Input.GetAxisRaw("Vertical");
 
