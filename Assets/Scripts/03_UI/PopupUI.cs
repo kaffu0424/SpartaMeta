@@ -26,13 +26,13 @@ public class PopupUI : MonoBehaviour
         exitFunction = exit;
     }
 
-    public void PopupEnter()
+    private void PopupEnter()
     {
         UIManager.Instance.OffPopup();
         enterFunction?.Invoke();
     }
 
-    public void PopupExit()
+    private void PopupExit()
     {
         UIManager.Instance.OffPopup();
         exitFunction?.Invoke();

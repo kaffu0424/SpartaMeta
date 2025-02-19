@@ -4,19 +4,12 @@ using UnityEngine;
 public class UIManager : Singleton_Mono<UIManager>
 {
     [SerializeField] private PopupUI popupUI;
-    public PopupUI Popup 
-    { 
-        get 
-        {
-            if (popupUI == null)
-                popupUI = FindObjectOfType<PopupUI>(true);
-
-            return popupUI; 
-        } 
-    }
+    [SerializeField] private int a;
 
     private bool isMovementBlocked;
-    public bool IsMovementBlocked { get { return isMovementBlocked; } }
+
+    public PopupUI Popup => popupUI;
+    public bool IsMovementBlocked => isMovementBlocked;
 
     protected override void InitializeManager()
     {
