@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class UIManager : Singleton_Mono<UIManager>
 {
-    [SerializeField] private PopupUI popupUI;
-    [SerializeField] private CustomCharacter customCharacter;
+    private PopupUI popupUI;
+    private CustomCharacter customCharacter;
     [SerializeField] private GameObject interactionGuide;
 
     private bool isMovementBlocked;
