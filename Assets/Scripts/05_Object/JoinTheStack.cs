@@ -5,23 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class JoinTheStack : MonoBehaviour
 {
-    [SerializeField] private GameObject interactionGuide;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-            interactionGuide.SetActive(true);
+            UIManager.Instance.OninteractionGuide(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-            interactionGuide.SetActive(false);
+            UIManager.Instance.OninteractionGuide(false);
     }
 
     private void Update()
     {
-        if (!interactionGuide.activeSelf)
+        if (!UIManager.Instance.IsOnGuide)
             return;
 
         if (Input.GetKeyDown(KeyCode.F))

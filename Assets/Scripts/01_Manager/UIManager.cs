@@ -5,6 +5,7 @@ public class UIManager : Singleton_Mono<UIManager>
 {
     [SerializeField] private PopupUI popupUI;
     [SerializeField] private CustomCharacter customCharacter;
+    [SerializeField] private GameObject interactionGuide;
 
     private bool isMovementBlocked;
 
@@ -12,6 +13,7 @@ public class UIManager : Singleton_Mono<UIManager>
     public PopupUI Popup => popupUI;
     public CustomCharacter CustomCharacter => customCharacter;
     public bool IsMovementBlocked => isMovementBlocked;
+    public bool IsOnGuide => interactionGuide.activeSelf;
 
     protected override void InitializeManager()
     {
@@ -41,5 +43,10 @@ public class UIManager : Singleton_Mono<UIManager>
     {
         isMovementBlocked = active;
         customCharacter.gameObject.SetActive(active);
+    }
+
+    public void OninteractionGuide(bool active)
+    {
+        interactionGuide.SetActive(active);
     }
 }
