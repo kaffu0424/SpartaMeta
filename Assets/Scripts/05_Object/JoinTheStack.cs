@@ -25,7 +25,7 @@ public class JoinTheStack : MonoBehaviour
             return;
 
         if (Input.GetKeyDown(KeyCode.F))
-            UIManager.Instance.Popup.OnPopup("미니게임\nThe Stack 입장하기", JoinGame);
+            UIManager.Instance.OnPopup("미니게임\nThe Stack 입장하기", JoinGame);
     }
     public void JoinGame()
     {

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class UIManager : Singleton_Mono<UIManager>
@@ -19,5 +18,12 @@ public class UIManager : Singleton_Mono<UIManager>
     protected override void InitializeManager()
     { }
 
-    // 흠 이것만 있으면 UI Manager 싱글톤 없어도될거같은데..
+    public void OnPopup(string Text, Action enter = null, Action exit = null)
+    {
+        if (popupUI == null)
+            return;
+
+        popupUI.gameObject.SetActive(true);
+        popupUI.OnPopup(Text, enter);
+    }
 }
