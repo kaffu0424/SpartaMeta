@@ -8,12 +8,13 @@ public class NpcLuna : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            UIManager.Instance.OnPopup("Npc 입니다.", OnCustomCharacter);
+            UIManager.Instance.OnPopup("캐릭터의 색상을 \n변경 하시겠습니까?", OnCustomCharacter);
         }
     }
 
     private void OnCustomCharacter()
     {
-
+        UIManager.Instance.OffPopup();
+        UIManager.Instance.OnCustomCharacter(true);
     }
 }
