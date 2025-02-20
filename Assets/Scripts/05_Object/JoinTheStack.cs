@@ -5,21 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class JoinTheStack : MonoBehaviour
 {
+    private bool triggerTheStack = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
+        {
+            triggerTheStack = true;
             UIManager.Instance.OninteractionGuide(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
+        {
+            triggerTheStack = false;
             UIManager.Instance.OninteractionGuide(false);
+        }
     }
 
     private void Update()
     {
-        if (!UIManager.Instance.IsOnGuide)
+        if (!triggerTheStack)
             return;
 
         if (Input.GetKeyDown(KeyCode.F))

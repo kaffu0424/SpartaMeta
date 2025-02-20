@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/02_StackGame.unity
     guid: d21c7a3faf74bd74f89a6bbf238cc822
+  - enabled: 1
+    path: Assets/Scenes/03_DodgeGame.unity
+    guid: 2e77a42a21e1dfe42bb32141f88ba01c
   m_configObjects: {}
